@@ -1,0 +1,5 @@
+Project: Interactive Personal Portfolio
+Tech Stack: React.js, TypeScript, Vite, Tailwind CSS (for rapid modern styling), and Framer Motion.
+Role: Full Stack Web Developer.
+Design Vision: Modern, immersive, and highly interactive. Strictly avoid minimalistic, empty designs. Utilize layered elements, bold typography, glassmorphism, and dynamic background gradients.
+Core Features:  Theme Toggle: A prominent, animated toggle button switching the entire application between Light and Dark modes. State should persist using local storage.Fluid Animations (Framer Motion): Implement page-load transitions, staggered entrance animations for the Skills grid (JavaScript, TypeScript, ReactJS, Ruby-On-Rails, etc.), and complex hover/scale physics on the Project cards.  Content Sections: Hero Section (with bio and image), Experience Timeline (VELLA FINANCE, MICROVERSE, etc.), Highlighted Projects Gallery, Education, and Contact Footer.
