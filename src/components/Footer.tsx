@@ -8,27 +8,27 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative border-t border-slate-200/60 dark:border-slate-800/80 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md pt-12 pb-8">
+    <footer className="relative border-t border-slate-300/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/40 backdrop-blur-md pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-200/60 dark:border-slate-800/60">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-300/80 dark:border-slate-800/60">
           
           {/* Brand & Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-md">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-md">
               <Code2 className="w-5 h-5" />
             </div>
             <div>
-              <p className="font-heading font-bold text-slate-900 dark:text-white">
+              <p className="font-heading font-bold text-slate-950 dark:text-white">
                 {HERO_DATA.name}
               </p>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
+              <p className="text-xs font-semibold text-slate-700 dark:text-slate-400">
                 {HERO_DATA.role}
               </p>
             </div>
           </div>
 
           {/* Nav quick links */}
-          <div className="flex flex-wrap justify-center gap-6 text-xs font-semibold text-slate-600 dark:text-slate-400">
+          <div className="flex flex-wrap justify-center gap-6 text-xs font-bold text-slate-800 dark:text-slate-300">
             <a href="#about" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
               About
             </a>
@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
           <button
             onClick={scrollToTop}
             aria-label="Scroll to top"
-            className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-indigo-950/60 dark:hover:text-indigo-400 transition-colors border border-slate-200 dark:border-slate-700 cursor-pointer"
+            className="p-2.5 rounded-xl bg-slate-200/80 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-indigo-100 hover:text-indigo-600 dark:hover:bg-indigo-950/60 dark:hover:text-indigo-400 transition-colors border border-slate-300 dark:border-slate-700 cursor-pointer"
           >
             <ArrowUp className="w-4 h-4" />
           </button>
@@ -61,10 +61,10 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-2">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs font-medium text-slate-700 dark:text-slate-400 gap-2">
           <p>© {new Date().getFullYear()} {HERO_DATA.name}. Built with React, TypeScript &amp; Framer Motion.</p>
           <p className="flex items-center gap-1">
-            Crafted with <Heart className="w-3.5 h-3.5 text-rose-500 inline fill-rose-500" /> for web excellence
+            Crafted with <Heart className="w-3.5 h-3.5 text-rose-600 inline fill-rose-600" /> for web excellence
           </p>
         </div>
       </div>

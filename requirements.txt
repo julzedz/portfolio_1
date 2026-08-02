@@ -3,3 +3,29 @@ Tech Stack: React.js, TypeScript, Vite, Tailwind CSS (for rapid modern styling),
 Role: Full Stack Web Developer.
 Design Vision: Modern, immersive, and highly interactive. Strictly avoid minimalistic, empty designs. Utilize layered elements, bold typography, glassmorphism, and dynamic background gradients.
 Core Features:  Theme Toggle: A prominent, animated toggle button switching the entire application between Light and Dark modes. State should persist using local storage.Fluid Animations (Framer Motion): Implement page-load transitions, staggered entrance animations for the Skills grid (JavaScript, TypeScript, ReactJS, Ruby-On-Rails, etc.), and complex hover/scale physics on the Project cards.  Content Sections: Hero Section (with bio and image), Experience Timeline (VELLA FINANCE, MICROVERSE, etc.), Highlighted Projects Gallery, Education, and Contact Footer.
+
+Name: JULES EDOZIE[cite: 1]
+Role: FULL STACK WEB DEVELOPER[cite: 1]
+Email: edoziechukwuma@gmail.com[cite: 1]
+GitHub_Link: www.github.com/julzedz
+LinkedIn_Link: https://www.linkedin.com/in/julesedozie/
+Programming_Languages: JavaScript, Typescript, Ruby, PHP, HTML5, CSS3[cite: 1]
+Libraries_Frameworks: ReactJS, Ruby-On-Rails, Laravel, Zustand, Bootstrap, Chakra UI, OpenCart, Shopify[cite: 1]
+Databases: SQL, PostgreSQL, MongoDB[cite: 1]
+Methodologies: Agile[cite: 1]
+Tools: Git, GitHub, Slack, Jest, RSpec, Postman, TDD, Dev Tools, AJAX[cite: 1]
+Professional_Skills: Remote Pair-Programming, Teamwork, Mentoring, Problem-solving, Critical thinking[cite: 1]
+
+Experience_1: NIBCODE Foundation (Part Time) | Tutor/ Web Developer | Jan 2025-Oct 2025 | Responsibilities: Tutor students in web development, providing technical support through code reviews, etc. Build and maintain websites for clients engaging the company's services.[cite: 1]
+Experience_2: VELLA FINANCE | Web Developer | Remote | Aug 2023 - September 2024 | Responsibilities: Worked with designers and senior devs to develop and maintain responsive UI features. Continuously optimised and improved the performance and scalability of applications.[cite: 1]
+Experience_3: MICROVERSE | Mentor (Volunteer) | Remote | September 2022-2024 | Responsibilities: Mentored 3+ junior web developers weekly on Zoom and Slack, providing technical support through code reviews.[cite: 1]
+
+Project_1: NIBCODE Foundation. - A tech NGO's digital brochure.[cite: 1]
+Project_2: Skilzz Stores - An online store built for client with Shopify.[cite: 1]
+Project_3: Property Bus Stop - A real estate platform built for client, for advertising and discovering properties.[cite: 1]
+Project_4: My-GameHub - A video game discovery hub for interesting games.[cite: 1]
+Project_5: GT Savings Bank App - A mock SPA for deposits, withdrawals.[cite: 1]
+Project_6: Sharp-GPT - An AI chatbot.[cite: 1]
+
+Education_1: MICROVERSE INC. | Remote Full Stack Web Development Program, Full-Time (2022) | Details: Spent 1300+ hours mastering algorithms, data structures, and full-stack web development while simultaneously developing projects with Ruby-On-Rails, JavaScript, React, etc. Developed skills in remote pair programming using GitHub, industry-standard Git Flow, and daily standups to collaborate with international remote developers.[cite: 1]
+Education_2: THE UNIVERSITY OF NIGERIA, ENUGU | B.Sc Computer Science (Second Class Upper Division) (2019)[cite: 1]
