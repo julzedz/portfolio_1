@@ -1,16 +1,17 @@
 import type { Experience, Project, Skill, Education, StatItem } from '../types';
 
 export const HERO_DATA = {
-  name: 'JULES EDOZIE',
-  role: 'FULL STACK WEB DEVELOPER',
-  tagline: 'Building modern, high-performance web applications & scalable digital products.',
-  bio: 'Accomplished Full Stack Web Developer proficient in JavaScript, TypeScript, ReactJS, Ruby on Rails, and PHP/Laravel. Experienced in remote pair-programming, UI optimization, client website delivery, and mentoring junior developers.',
-  status: 'Available for new opportunities',
-  location: 'Nigeria (Open to Global Remote Work)',
-  email: 'edoziechukwuma@gmail.com',
-  github: 'https://www.github.com/julzedz',
-  linkedin: 'https://www.github.com/julzedz',
-  twitter: 'https://www.github.com/julzedz',
+  name: "JULES EDOZIE",
+  role: "FULL STACK WEB DEVELOPER",
+  tagline:
+    "Building modern, high-performance web applications & scalable digital products.",
+  bio: "Accomplished Full Stack Web Developer proficient in JavaScript, TypeScript, ReactJS, Ruby on Rails, and PHP/Laravel. Experienced in remote pair-programming, UI optimization, client website delivery, and mentoring junior developers.",
+  status: "Available for new opportunities",
+  location: "Nigeria (Open to Global Remote Work)",
+  email: "edoziechukwuma@gmail.com",
+  github: "https://www.github.com/julzedz",
+  linkedin: "https://www.linkedin.com/in/julesedozie/",
+  twitter: "https://www.github.com/julzedz",
 };
 
 export const STATS_DATA: StatItem[] = [
@@ -125,7 +126,7 @@ export const EXPERIENCES_DATA: Experience[] = [
     company: 'NIBCODE Foundation',
     location: 'Part Time',
     role: 'Tutor / Web Developer',
-    period: 'Jan 2025 - Present',
+    period: 'Jan 2025 - Oct 2025',
     type: 'Contract',
     description: 'Tutor students in web development, providing technical support through code reviews, etc. Build and maintain websites for clients engaging the company\'s services.',
     achievements: [
