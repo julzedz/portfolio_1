@@ -4,8 +4,8 @@ Role: Full Stack Web Developer.
 Design Vision: Modern, immersive, and highly interactive. Strictly avoid minimalistic, empty designs. Utilize layered elements, bold typography, glassmorphism, and dynamic background gradients.
 Core Features:  Theme Toggle: A prominent, animated toggle button switching the entire application between Light and Dark modes. State should persist using local storage.Fluid Animations (Framer Motion): Implement page-load transitions, staggered entrance animations for the Skills grid (JavaScript, TypeScript, ReactJS, Ruby-On-Rails, etc.), and complex hover/scale physics on the Project cards.  Content Sections: Hero Section (with bio and image), Experience Timeline (VELLA FINANCE, MICROVERSE, etc.), Highlighted Projects Gallery, Education, and Contact Footer.
 
-Name: JULES EDOZIE[cite: 1]
-Role: FULL STACK WEB DEVELOPER[cite: 1]
+Name: Jules Edozie[cite: 1]
+Role: Full Stack Web Developer[cite: 1]
 Email: edoziechukwuma@gmail.com[cite: 1]
 GitHub_Link: www.github.com/julzedz
 LinkedIn_Link: https://www.linkedin.com/in/julesedozie/

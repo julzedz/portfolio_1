@@ -1,8 +1,8 @@
 import type { Experience, Project, Skill, Education, StatItem } from '../types';
 
 export const HERO_DATA = {
-  name: "JULES EDOZIE",
-  role: "FULL STACK WEB DEVELOPER",
+  name: "Jules Edozie",
+  role: "Full Stack Web Developer",
   tagline:
     "Building modern, high-performance web applications & scalable digital products.",
   bio: "Accomplished Full Stack Web Developer proficient in JavaScript, TypeScript, ReactJS, Ruby on Rails, and PHP/Laravel. Experienced in remote pair-programming, UI optimization, client website delivery, and mentoring junior developers.",
@@ -128,7 +128,7 @@ export const EXPERIENCES_DATA: Experience[] = [
     role: 'Tutor / Web Developer',
     period: 'Jan 2025 - Oct 2025',
     type: 'Contract',
-    description: 'Tutor students in web development, providing technical support through code reviews, etc. Build and maintain websites for clients engaging the company\'s services.',
+    description: 'Tutored students in web development, providing technical support through code reviews, etc. Built and maintained websites for clients engaging the company\'s services.',
     achievements: [
       'Tutored students in full-stack web development, conducting technical code reviews and debugging support.',
       'Architected, built, and maintained custom websites for clients engaging NIBCODE Foundation services.',
