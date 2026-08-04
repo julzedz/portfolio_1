@@ -28,4 +28,4 @@ Project_5: GT Savings Bank App - A mock SPA for deposits, withdrawals.[cite: 1]
 Project_6: Sharp-GPT - An AI chatbot.[cite: 1]
 
 Education_1: MICROVERSE INC. | Remote Full Stack Web Development Program, Full-Time (2022) | Details: Spent 1300+ hours mastering algorithms, data structures, and full-stack web development while simultaneously developing projects with Ruby-On-Rails, JavaScript, React, etc. Developed skills in remote pair programming using GitHub, industry-standard Git Flow, and daily standups to collaborate with international remote developers.[cite: 1]
-Education_2: THE UNIVERSITY OF NIGERIA, ENUGU | B.Sc Computer Science (Second Class Upper Division) (2019)[cite: 1]
+Education_2: THE UNIVERSITY OF NIGERIA, ENUGU | LL.B Law (Second Class Upper Division) (2019)[cite: 1]

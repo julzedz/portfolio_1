@@ -18,10 +18,22 @@ export const HERO_DATA = {
 };
 
 export const STATS_DATA: StatItem[] = [
-  { label: 'Intensive Training', value: '1,300+ Hrs', description: 'At Microverse Inc.' },
-  { label: 'Full-Stack Projects', value: '10+', description: 'Delivered for clients & open-source' },
-  { label: 'Code Reviews', value: '300+', description: 'Mentored junior developers' },
-  { label: 'Degree Honor', value: '2:1 Upper', description: 'B.Sc. Computer Science (UNN)' },
+  {
+    label: "Intensive Training",
+    value: "1,300+ Hrs",
+    description: "At Microverse Inc.",
+  },
+  {
+    label: "Full-Stack Projects",
+    value: "10+",
+    description: "Delivered for clients & open-source",
+  },
+  {
+    label: "Code Reviews",
+    value: "300+",
+    description: "Mentored junior developers",
+  },
+  { label: "Degree Honor", value: "2:1 Upper", description: "LL.B Law (UNN)" },
 ];
 
 export const SKILLS_DATA: Skill[] = [
@@ -336,27 +348,29 @@ export const PROJECTS_DATA: Project[] = [
 
 export const EDUCATION_DATA: Education[] = [
   {
-    id: 'edu-1',
-    institution: 'MICROVERSE INC.',
-    degree: 'Remote Full Stack Web Development Program, Full-Time',
-    period: '2022',
-    description: 'Spent 1,300+ hours mastering algorithms, data structures, and full-stack web development while simultaneously developing projects with Ruby-On-Rails, JavaScript, React, etc.',
+    id: "edu-1",
+    institution: "MICROVERSE INC.",
+    degree: "Remote Full Stack Web Development Program, Full-Time",
+    period: "2022",
+    description:
+      "Spent 1,300+ hours mastering algorithms, data structures, and full-stack web development while simultaneously developing projects with Ruby-On-Rails, JavaScript, React, etc.",
     highlights: [
-      'Developed skills in remote pair programming using GitHub, industry-standard Git Flow, and daily standups to collaborate with international remote developers',
-      'Built 10+ full-stack capstone projects adhering to strict technical code reviews and TDD practices',
-      'Mastered algorithms, data structures, React, Redux, Ruby on Rails, and PostgreSQL',
+      "Developed skills in remote pair programming using GitHub, industry-standard Git Flow, and daily standups to collaborate with international remote developers",
+      "Built 10+ full-stack capstone projects adhering to strict technical code reviews and TDD practices",
+      "Mastered algorithms, data structures, React, Redux, Ruby on Rails, and PostgreSQL",
     ],
   },
   {
-    id: 'edu-2',
-    institution: 'THE UNIVERSITY OF NIGERIA, ENUGU',
-    degree: 'B.Sc Computer Science (Second Class Upper Division)',
-    period: '2019',
-    description: 'Earned a B.Sc. in Computer Science with Second Class Upper Division (2:1) honors.',
+    id: "edu-2",
+    institution: "THE UNIVERSITY OF NIGERIA, ENUGU",
+    degree: "LL.B Law (Second Class Upper Division)",
+    period: "2019",
+    description:
+      "Earned an LL.B in Law with Second Class Upper Division (2:1) honors.",
     highlights: [
-      'Graduated with Second Class Upper Division (2:1) honors',
-      'Strong academic foundation in computer science principles, software engineering, and database systems',
-      'Completed coursework in data structures, algorithms, object-oriented programming, and computer networks',
+      "Graduated with Second Class Upper Division (2:1) honors",
+      "Strong academic foundation in legal principles, software engineering, and database systems",
+      "Completed coursework in data structures, algorithms, object-oriented programming, and computer networks",
     ],
   },
 ];
