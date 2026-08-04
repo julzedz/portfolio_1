@@ -74,10 +74,13 @@ export const HeroSection: React.FC = () => {
               <motion.a
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                href="#contact"
-                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl text-sm font-bold text-indigo-700 dark:text-indigo-400 hover:underline"
+                href="/assets/Resume.pdf"
+                download="Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-indigo-950 dark:text-slate-100 bg-white/90 dark:bg-slate-800/80 hover:bg-indigo-50 dark:hover:bg-slate-700/80 border-2 border-indigo-600 dark:border-indigo-500/80 shadow-md transition-all duration-200"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-5 h-5 text-indigo-700 dark:text-indigo-400" />
                 <span>Resume (PDF)</span>
               </motion.a>
             </div>

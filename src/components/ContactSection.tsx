@@ -1,24 +1,145 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useForm, ValidationError } from '@formspree/react';
 import { HERO_DATA } from '../data/portfolioData';
-import { Mail, MapPin, Send, CheckCircle2, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, MessageSquare, AlertCircle } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './SocialIcons';
 
-export const ContactSection: React.FC = () => {
+interface FormProps {
+  onReset: () => void;
+}
+
+const ContactForm: React.FC<FormProps> = ({ onReset }) => {
+  const [state, handleSubmit] = useForm('mdennwzw');
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+  if (state.succeeded) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0 }}
+        className="p-8 text-center space-y-4 bg-emerald-100 dark:bg-emerald-950/40 rounded-2xl border border-emerald-300 dark:border-emerald-800 my-4"
+      >
+        <div className="w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center mx-auto shadow-lg">
+          <CheckCircle2 className="w-8 h-8" />
+        </div>
+        <h4 className="text-xl font-heading font-extrabold text-slate-950 dark:text-white">
+          Message Sent Successfully!
+        </h4>
+        <p className="text-sm font-medium text-slate-900 dark:text-slate-200 max-w-md mx-auto">
+          Thank you for reaching out! Your message has been sent directly to my email. I will respond promptly within 24 hours.
+        </p>
+        <button
+          onClick={onReset}
+          className="px-5 py-2.5 rounded-xl text-xs font-bold bg-emerald-700 text-white hover:bg-emerald-600 transition-colors cursor-pointer"
+        >
+          Send Another Message
+        </button>
+      </motion.div>
+    );
+  }
 
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1200);
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="name" className="block text-xs font-extrabold text-slate-950 dark:text-slate-200 mb-1.5">
+            Your Name *
+          </label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            required
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            placeholder="John Doe"
+            className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400"
+          />
+          <ValidationError prefix="Name" field="name" errors={state.errors} className="text-xs text-rose-600 font-bold mt-1 block" />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-xs font-extrabold text-slate-950 dark:text-slate-200 mb-1.5">
+            Your Email *
+          </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            required
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            placeholder="john@example.com"
+            className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400"
+          />
+          <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-rose-600 font-bold mt-1 block" />
+        </div>
+      </div>
+
+      <div>
+        <label htmlFor="subject" className="block text-xs font-extrabold text-slate-950 dark:text-slate-200 mb-1.5">
+          Subject
+        </label>
+        <input
+          id="subject"
+          type="text"
+          name="subject"
+          value={formData.subject}
+          onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+          placeholder="Project Collaboration / Inquiries"
+          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400"
+        />
+        <ValidationError prefix="Subject" field="subject" errors={state.errors} className="text-xs text-rose-600 font-bold mt-1 block" />
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block text-xs font-extrabold text-slate-950 dark:text-slate-200 mb-1.5">
+          Message *
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={4}
+          value={formData.message}
+          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          placeholder="Hi Jules, I'd love to discuss..."
+          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all resize-none font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400"
+        />
+        <ValidationError prefix="Message" field="message" errors={state.errors} className="text-xs text-rose-600 font-bold mt-1 block" />
+      </div>
+
+      {state.errors && Object.keys(state.errors).length > 0 && (
+        <div className="p-3.5 rounded-xl bg-rose-100 dark:bg-rose-950/50 border border-rose-300 dark:border-rose-800 text-rose-800 dark:text-rose-300 text-xs font-semibold flex items-center gap-2">
+          <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+          <span>There was an issue sending your message. Please verify your entries and try again.</span>
+        </div>
+      )}
+
+      <button
+        type="submit"
+        disabled={state.submitting}
+        className="w-full py-3.5 rounded-xl font-extrabold text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:to-pink-500 shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-70"
+      >
+        {state.submitting ? (
+          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+        ) : (
+          <>
+            <span>Send Message</span>
+            <Send className="w-4 h-4" />
+          </>
+        )}
+      </button>
+    </form>
+  );
+};
+
+export const ContactSection: React.FC = () => {
+  const [formKey, setFormKey] = useState(0);
+
+  const handleReset = () => {
+    setFormKey((prevKey) => prevKey + 1);
   };
 
   return (
@@ -141,103 +262,7 @@ export const ContactSection: React.FC = () => {
               </h3>
 
               <AnimatePresence mode="wait">
-                {submitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="p-8 text-center space-y-4 bg-emerald-100 dark:bg-emerald-950/40 rounded-2xl border border-emerald-300 dark:border-emerald-800 my-4"
-                  >
-                    <div className="w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center mx-auto shadow-lg">
-                      <CheckCircle2 className="w-8 h-8" />
-                    </div>
-                    <h4 className="text-xl font-heading font-extrabold text-slate-950 dark:text-white">
-                      Message Sent Successfully!
-                    </h4>
-                    <p className="text-sm font-medium text-slate-900 dark:text-slate-200 max-w-md mx-auto">
-                      Thank you for reaching out! I will respond to your message promptly within 24 hours.
-                    </p>
-                    <button
-                      onClick={() => setSubmitted(false)}
-                      className="px-5 py-2.5 rounded-xl text-xs font-bold bg-emerald-700 text-white hover:bg-emerald-600 transition-colors cursor-pointer"
-                    >
-                      Send Another Message
-                    </button>
-                  </motion.div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-xs font-extrabold text-slate-950 dark:text-slate-200 mb-1.5">
-                          Your Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          placeholder="John Doe"
-                          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-xs font-extrabold text-slate-950 dark:text-slate-200 mb-1.5">
-                          Your Email *
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          placeholder="john@example.com"
-                          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-extrabold text-slate-950 dark:text-slate-200 mb-1.5">
-                        Subject
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.subject}
-                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        placeholder="Project Collaboration / Inquiries"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-extrabold text-slate-950 dark:text-slate-200 mb-1.5">
-                        Message *
-                      </label>
-                      <textarea
-                        required
-                        rows={4}
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Hi Jules, I'd love to discuss..."
-                        className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all resize-none font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="w-full py-3.5 rounded-xl font-extrabold text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:to-pink-500 shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-70"
-                    >
-                      {loading ? (
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      ) : (
-                        <>
-                          <span>Send Message</span>
-                          <Send className="w-4 h-4" />
-                        </>
-                      )}
-                    </button>
-                  </form>
-                )}
+                <ContactForm key={formKey} onReset={handleReset} />
               </AnimatePresence>
             </div>
           </motion.div>
@@ -247,3 +272,4 @@ export const ContactSection: React.FC = () => {
     </section>
   );
 };
+

@@ -13,7 +13,7 @@ import {
   Share2,
   Container,
   Zap,
-  GitBranch,
+  Bug,
   Sparkles,
   Layers,
 } from 'lucide-react';
@@ -29,7 +29,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
   Share2,
   Container,
   Zap,
-  GitBranch,
+  Bug,
   Sparkles,
 };
 
