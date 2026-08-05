@@ -55,7 +55,7 @@ export const HeroSection: React.FC = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:to-pink-500 shadow-lg shadow-indigo-500/25 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-white bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:to-pink-500 shadow-lg shadow-indigo-500/25 transition-all duration-200"
               >
                 <span>View My Work</span>
                 <ArrowRight className="w-5 h-5" />
@@ -123,7 +123,7 @@ export const HeroSection: React.FC = () => {
           >
             <div className="relative mx-auto max-w-md">
               {/* Outer Glowing Gradient Frame */}
-              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-60 blur-xl animate-pulse" />
+              <div className="absolute -inset-1 rounded-3xl bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-60 blur-xl animate-pulse" />
 
               {/* Glassmorphism Code & Avatar Box */}
               <div className="relative glass-card rounded-3xl p-6 overflow-hidden border border-slate-300 dark:border-slate-700/60 shadow-2xl">
@@ -157,7 +157,7 @@ export const HeroSection: React.FC = () => {
                     <span className="text-cyan-700 dark:text-cyan-400 font-bold">coreTech:</span> [
                   </div>
                   <div className="pl-8 text-amber-700 dark:text-amber-300 font-semibold">
-                    'ReactJS', 'TypeScript', 'Ruby-On-Rails', 'Laravel'
+                    'ReactJS', 'NextJS', 'TypeScript', 'Ruby-On-Rails', 'Laravel'
                   </div>
                   <div className="pl-4">],</div>
                   <div className="pl-4">

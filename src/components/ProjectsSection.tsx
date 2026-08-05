@@ -55,7 +55,7 @@ export const ProjectsSection: React.FC = () => {
                 {selectedCategory === cat && (
                   <motion.div
                     layoutId="projectsCategoryTab"
-                    className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl -z-10"
+                    className="absolute inset-0 bg-linear-to-r from-indigo-600 to-purple-600 rounded-xl -z-10"
                     transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                   />
                 )}
@@ -90,7 +90,7 @@ export const ProjectsSection: React.FC = () => {
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
 
                     {/* Category pill */}
                     <div className="absolute top-3 left-3">
@@ -143,7 +143,7 @@ export const ProjectsSection: React.FC = () => {
                 </div>
 
                 {/* Footer Buttons */}
-                <div className="p-6 pt-0 flex items-center justify-between border-t border-slate-300 dark:border-slate-800/80 mt-4 pt-4">
+                <div className="p-6 pt-0 flex items-center justify-between border-t border-slate-300 dark:border-slate-800/80 mt-4">
                   <button
                     onClick={() => setActiveModalProject(project)}
                     className="text-xs font-black text-indigo-900 dark:text-indigo-400 hover:underline flex items-center gap-1"

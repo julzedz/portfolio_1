@@ -120,7 +120,7 @@ const ContactForm: React.FC<FormProps> = ({ onReset }) => {
       <button
         type="submit"
         disabled={state.submitting}
-        className="w-full py-3.5 rounded-xl font-extrabold text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:to-pink-500 shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-70"
+        className="w-full py-3.5 rounded-xl font-extrabold text-white bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:to-pink-500 shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-70"
       >
         {state.submitting ? (
           <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />

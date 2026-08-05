@@ -2,6 +2,8 @@ import type { Experience, Project, Skill, Education, StatItem } from '../types';
 import nibcode from '/public/assets/nibcode.png';
 import skilzz from '/public/assets/skilzz.png';
 import propertybusstop from '/public/assets/propertybusstop.png';
+import gtsa from '/public/assets/gtsb.jpg';
+import logistics from '/public/assets/logistics.jpg';
 
 export const HERO_DATA = {
   name: "Jules Edozie",
@@ -196,8 +198,7 @@ export const PROJECTS_DATA: Project[] = [
       "A tech NGO's digital brochure and web platform showcasing educational programs, student achievements, and community initiatives.",
     longDescription:
       "Designed and developed for NIBCODE Foundation to present their technical web development curriculum and client services. Built with responsive styling, glassmorphic layout, and interactive course breakdowns.",
-    image:
-      nibcode,
+    image: nibcode,
     tags: ["ReactJS", "TypeScript", "Tailwind CSS", "HTML5/CSS3"],
     features: [
       "Interactive digital brochure highlighting NGO initiatives & client services",
@@ -210,8 +211,8 @@ export const PROJECTS_DATA: Project[] = [
       { label: "Platform", value: "Web / Mobile" },
       { label: "Impact", value: "Active NGO" },
     ],
-    demoUrl: "https://www.github.com/julzedz",
-    githubUrl: "https://www.github.com/julzedz",
+    demoUrl: "https://www.nibcode.org",
+    githubUrl: "https://github.com/julzedz/tech_ngo",
     featured: true,
   },
   {
@@ -223,8 +224,7 @@ export const PROJECTS_DATA: Project[] = [
       "An online store custom-built for a client utilizing Shopify technology for seamless product catalog management and shopping cart checkout.",
     longDescription:
       "Crafted for Skilzz Stores to deliver a friction-free online shopping experience for customers. Features customized Shopify templates, product inventory cataloging, secure checkout workflows, and responsive styling.",
-    image:
-      skilzz,
+    image: skilzz,
     tags: ["Shopify", "Liquid", "JavaScript", "CSS3", "E-Commerce"],
     features: [
       "Custom Shopify storefront integration tailored for client branding",
@@ -236,12 +236,37 @@ export const PROJECTS_DATA: Project[] = [
       { label: "Client Project", value: "E-Commerce" },
       { label: "Tech Stack", value: "Shopify" },
     ],
-    demoUrl: "https://www.github.com/julzedz",
+    demoUrl: "https://www.skilzz.com",
     githubUrl: "https://www.github.com/julzedz",
     featured: true,
   },
   {
     id: "proj-3",
+    title: "eXPO Logistics",
+    subtitle: "Logistics Company Website",
+    category: "Frontend",
+    description:
+      "eXPO Logistics is a logistics and courier service company website, with features like cost estimation, parcel tracking.",
+    longDescription:
+      "A modern, responsive web application for logistics forwarding and supply chain management, designed to provide parcel tracking, cost estimation, and other logistics services.",
+    image: logistics,
+    tags: ["NextJS", "TypeScript", "Tailwind CSS"],
+    features: [
+      "IReal-Time Shipment Tracking",
+      "Interactive Shipping Cost Calculator",
+      "Comprehensive Freight & Logistics Services",
+      "Modern, Responsive UI",
+    ],
+    metrics: [
+      { label: "Category", value: "Logistics" },
+      { label: "Stack", value: "Next JS" },
+    ],
+    demoUrl: "https://courier-logistics.onrender.com/",
+    githubUrl: "https://www.github.com/julzedz/courier",
+    featured: false,
+  },
+  {
+    id: "proj-4",
     title: "Property Bus Stop",
     subtitle: "Real Estate Platform for Advertising & Property Discovery",
     category: "Full Stack",
@@ -249,8 +274,7 @@ export const PROJECTS_DATA: Project[] = [
       "A real estate platform built for a client, for advertising and discovering residential and commercial properties.",
     longDescription:
       "A comprehensive real estate web application enabling property agents and buyers to list, discover, and inquire about real estate offerings with location filters, detail views, and contact channels.",
-    image:
-      propertybusstop,
+    image: propertybusstop,
     tags: ["ReactJS", "Ruby-On-Rails", "PostgreSQL", "Tailwind CSS"],
     features: [
       "Property listing discovery with location and price filters",
@@ -262,13 +286,13 @@ export const PROJECTS_DATA: Project[] = [
       { label: "Domain", value: "Real Estate" },
       { label: "Architecture", value: "Full Stack" },
     ],
-    demoUrl: "https://www.github.com/julzedz",
-    githubUrl: "https://www.github.com/julzedz",
+    demoUrl: "https://propertybusstop.com",
+    githubUrl: "https://github.com/julzedz/pbs_frontend",
     featured: true,
   },
   {
-    id: "proj-4",
-    title: "My-GameHub",
+    id: "proj-5",
+    title: "My GameHub",
     subtitle: "Video Game Discovery Hub",
     category: "Frontend",
     description:
@@ -288,12 +312,12 @@ export const PROJECTS_DATA: Project[] = [
       { label: "Type", value: "Web App" },
       { label: "State", value: "Zustand" },
     ],
-    demoUrl: "https://www.github.com/julzedz/My-GameHub",
-    githubUrl: "https://www.github.com/julzedz/My-GameHub",
+    demoUrl: "https://game-hub-gold-seven.vercel.app/",
+    githubUrl: "https://github.com/julzedz/GameHub",
     featured: false,
   },
   {
-    id: "proj-5",
+    id: "proj-6",
     title: "GT Savings Bank App",
     subtitle: "Mock SPA for Banking Deposits & Withdrawals",
     category: "Frontend",
@@ -301,9 +325,14 @@ export const PROJECTS_DATA: Project[] = [
       "A mock Single Page Application (SPA) designed for simulated monetary deposits, withdrawals, and balance history tracking.",
     longDescription:
       "Developed using ReactJS and state management to simulate digital banking workflows. Allows users to test account balances, perform mock transaction deposits/withdrawals, and view history ledgers.",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
-    tags: ["ReactJS", "JavaScript", "CSS3", "SPA Architecture"],
+    image: gtsa,
+    tags: [
+      "ReactJS",
+      "JavaScript",
+      "CSS3",
+      "SPA Architecture",
+      "Ruby-On-Rails",
+    ],
     features: [
       "Simulated account deposit and withdrawal transactions",
       "Real-time balance computation and ledger updates",
@@ -314,33 +343,7 @@ export const PROJECTS_DATA: Project[] = [
       { label: "Pattern", value: "SPA" },
       { label: "Focus", value: "Fintech UI" },
     ],
-    demoUrl: "https://www.github.com/julzedz",
-    githubUrl: "https://www.github.com/julzedz",
-    featured: false,
-  },
-  {
-    id: "proj-6",
-    title: "Sharp-GPT",
-    subtitle: "AI Chatbot & Conversation Interface",
-    category: "Full Stack",
-    description:
-      "An AI chatbot web application for interactive conversational assistance and prompt responses.",
-    longDescription:
-      "Sharp-GPT provides an intuitive user interface for conversing with artificial intelligence models, generating code assistance, writing help, and saving prompt threads.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=1200&auto=format&fit=crop",
-    tags: ["ReactJS", "TypeScript", "Node.js", "AI API", "Tailwind CSS"],
-    features: [
-      "Interactive conversational AI chat interface",
-      "Streaming message response rendering",
-      "Preset prompt templates for coding, writing, and brainstorming",
-      "Responsive dark mode glassmorphic UI",
-    ],
-    metrics: [
-      { label: "Category", value: "AI / Chatbot" },
-      { label: "Integrations", value: "AI API" },
-    ],
-    demoUrl: "https://www.github.com/julzedz",
+    demoUrl: "https://gtsa.onrender.com/",
     githubUrl: "https://www.github.com/julzedz",
     featured: false,
   },
