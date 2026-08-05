@@ -1,9 +1,9 @@
 import type { Experience, Project, Skill, Education, StatItem } from '../types';
-import nibcode from '/public/assets/nibcode.png';
-import skilzz from '/public/assets/skilzz.png';
-import propertybusstop from '/public/assets/propertybusstop.png';
-import gtsa from '/public/assets/gtsb.jpg';
-import logistics from '/public/assets/logistics.jpg';
+import nibcode from '/public/assets/nibcode.webp';
+import skilzz from '/public/assets/skilzz.webp';
+import propertybusstop from '/public/assets/propertybusstop.webp';
+import gtsa from '/public/assets/gtsb.webp';
+import logistics from '/public/assets/logistics.webp';
 
 export const HERO_DATA = {
   name: "Jules Edozie",
