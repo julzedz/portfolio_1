@@ -1,10 +1,57 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { HERO_DATA, STATS_DATA } from '../data/portfolioData';
-import { ArrowRight, Download, Mail, Sparkles, Terminal, Code } from 'lucide-react';
+import {
+  ArrowRight,
+  Download,
+  Mail,
+  Sparkles,
+  Terminal,
+  Code,
+  Video,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  RotateCcw,
+} from 'lucide-react';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from './SocialIcons';
 
 export const HeroSection: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'video' | 'code'>('video');
+  const [isMuted, setIsMuted] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [hasEnded, setHasEnded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        if (hasEnded || videoRef.current.ended) {
+          videoRef.current.currentTime = 0;
+          setHasEnded(false);
+        }
+        videoRef.current.play();
+        setIsPlaying(true);
+      }
+    }
+  };
+
+  const handleVideoEnded = () => {
+    setIsPlaying(false);
+    setHasEnded(true);
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   return (
     <section id="about" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -61,6 +108,24 @@ export const HeroSection: React.FC = () => {
                 <ArrowRight className="w-5 h-5" />
               </motion.a>
 
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                onClick={() => {
+                  setActiveTab('video');
+                  if (videoRef.current) {
+                    videoRef.current.currentTime = 0;
+                    setHasEnded(false);
+                    videoRef.current.play();
+                    setIsPlaying(true);
+                  }
+                }}
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-indigo-950 dark:text-slate-100 bg-indigo-100/90 dark:bg-indigo-950/70 hover:bg-indigo-200/90 dark:hover:bg-indigo-900/80 border border-indigo-300 dark:border-indigo-700 shadow-sm transition-all duration-200 cursor-pointer"
+              >
+                <Video className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                <span>Watch Video Intro</span>
+              </motion.button>
+
               <motion.a
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
@@ -114,7 +179,7 @@ export const HeroSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Right Column: Dynamic Portrait Card / Code Card */}
+          {/* Right Column: Dynamic Video Greeting & Code Card */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -125,59 +190,171 @@ export const HeroSection: React.FC = () => {
               {/* Outer Glowing Gradient Frame */}
               <div className="absolute -inset-1 rounded-3xl bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-60 blur-xl animate-pulse" />
 
-              {/* Glassmorphism Code & Avatar Box */}
-              <div className="relative glass-card rounded-3xl p-6 overflow-hidden border border-slate-300 dark:border-slate-700/60 shadow-2xl">
-                {/* Decorative Window Controls */}
+              {/* Glassmorphism Container */}
+              <div className="relative glass-card rounded-3xl p-5 sm:p-6 overflow-hidden border border-slate-300 dark:border-slate-700/60 shadow-2xl">
+                {/* Header Bar with Tabs */}
                 <div className="flex items-center justify-between pb-4 border-b border-slate-300/80 dark:border-slate-800">
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 rounded-full bg-rose-500" />
                     <div className="w-3 h-3 rounded-full bg-amber-500" />
                     <div className="w-3 h-3 rounded-full bg-emerald-500" />
                   </div>
-                  <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-400 flex items-center gap-1">
-                    <Code className="w-3.5 h-3.5" /> developer.config.ts
-                  </span>
+
+                  <div className="flex items-center gap-1.5 bg-slate-200/80 dark:bg-slate-800/80 p-1 rounded-xl border border-slate-300/80 dark:border-slate-700/80">
+                    <button
+                      onClick={() => setActiveTab('video')}
+                      className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all ${
+                        activeTab === 'video'
+                          ? 'bg-indigo-600 text-white shadow-xs'
+                          : 'text-slate-700 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300'
+                      }`}
+                    >
+                      <Video className="w-3.5 h-3.5" /> Video
+                    </button>
+                    <button
+                      onClick={() => setActiveTab('code')}
+                      className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all ${
+                        activeTab === 'code'
+                          ? 'bg-indigo-600 text-white shadow-xs'
+                          : 'text-slate-700 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300'
+                      }`}
+                    >
+                      <Code className="w-3.5 h-3.5" /> config.ts
+                    </button>
+                  </div>
                 </div>
 
-                {/* Simulated Code Snippet */}
-                <div className="pt-4 font-mono text-xs sm:text-sm space-y-2 leading-relaxed text-slate-900 dark:text-slate-200">
-                  <div>
-                    <span className="text-purple-700 dark:text-purple-400 font-bold">const</span>{' '}
-                    <span className="text-indigo-700 dark:text-indigo-300 font-bold">developer</span> = &#123;
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-cyan-700 dark:text-cyan-400 font-bold">name:</span>{' '}
-                    <span className="text-emerald-700 dark:text-emerald-400 font-semibold">'{HERO_DATA.name}'</span>,
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-cyan-700 dark:text-cyan-400 font-bold">role:</span>{' '}
-                    <span className="text-emerald-700 dark:text-emerald-400 font-semibold">'Full Stack Web Developer'</span>,
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-cyan-700 dark:text-cyan-400 font-bold">coreTech:</span> [
-                  </div>
-                  <div className="pl-8 text-amber-700 dark:text-amber-300 font-semibold">
-                    'ReactJS', 'NextJS', 'TypeScript', 'Ruby-On-Rails', 'Laravel'
-                  </div>
-                  <div className="pl-4">],</div>
-                  <div className="pl-4">
-                    <span className="text-cyan-700 dark:text-cyan-400 font-bold">coffeeLevel:</span>{' '}
-                    <span className="text-rose-600 font-bold">Infinity</span>,
-                  </div>
-                  <div className="pl-4">
-                    <span className="text-cyan-700 dark:text-cyan-400 font-bold">passion:</span>{' '}
-                    <span className="text-emerald-700 dark:text-emerald-400 font-semibold">'Crafting digital perfection'</span>
-                  </div>
-                  <div>&#125;;</div>
-                </div>
+                {/* Tab Content */}
+                <AnimatePresence mode="wait">
+                  {activeTab === 'video' ? (
+                    <motion.div
+                      key="video-tab"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3 }}
+                      className="pt-4 space-y-4"
+                    >
+                      {/* Video Player Frame */}
+                      <div className="relative rounded-2xl overflow-hidden bg-slate-950 border border-slate-300 dark:border-slate-800 shadow-md group">
+                        <video
+                          ref={videoRef}
+                          src="/assets/Dev.mp4"
+                          playsInline
+                          autoPlay
+                          muted={isMuted}
+                          onEnded={handleVideoEnded}
+                          className="w-full aspect-video sm:aspect-[4/3] object-cover"
+                        />
+
+                        {/* Interactive Play/Pause & Sound Overlay */}
+                        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-black/20 opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-3.5">
+                          <div className="flex justify-between items-center">
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-[11px] font-bold text-white border border-white/20">
+                              <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
+                              Live Intro
+                            </span>
+
+                            <button
+                              onClick={toggleMute}
+                              className="p-2 rounded-full bg-slate-900/80 backdrop-blur-md text-white hover:bg-indigo-600 border border-white/20 transition-all cursor-pointer"
+                              title={isMuted ? 'Unmute Audio' : 'Mute Audio'}
+                            >
+                              {isMuted ? (
+                                <VolumeX className="w-4 h-4 text-amber-400" />
+                              ) : (
+                                <Volume2 className="w-4 h-4 text-emerald-400" />
+                              )}
+                            </button>
+                          </div>
+
+                          <div className="flex items-center justify-between">
+                            <button
+                              onClick={togglePlay}
+                              className="p-2.5 rounded-full bg-indigo-600/90 text-white hover:bg-indigo-500 shadow-lg backdrop-blur-sm transition-all cursor-pointer flex items-center gap-1 text-xs font-bold px-3"
+                            >
+                              {hasEnded ? (
+                                <>
+                                  <RotateCcw className="w-4 h-4" /> Replay
+                                </>
+                              ) : isPlaying ? (
+                                <>
+                                  <Pause className="w-4 h-4" /> Pause
+                                </>
+                              ) : (
+                                <>
+                                  <Play className="w-4 h-4 fill-white" /> Play
+                                </>
+                              )}
+                            </button>
+
+                            {isMuted && (
+                              <button
+                                onClick={toggleMute}
+                                className="text-[11px] font-bold text-amber-300 bg-amber-950/80 backdrop-blur-md px-2.5 py-1 rounded-full border border-amber-500/40 hover:bg-amber-900 transition-all cursor-pointer flex items-center gap-1 animate-pulse"
+                              >
+                                <VolumeX className="w-3 h-3" /> Tap to Unmute
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Video Subtitle & Quote Box */}
+                      <div className="p-3.5 rounded-2xl bg-indigo-50/80 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/80">
+                        <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 leading-relaxed italic">
+                          "Hi, I am Jules Edozie. I am a full stack developer. I build fast, scalable websites. Let's build something amazing together."
+                        </p>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="code-tab"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3 }}
+                      className="pt-4 font-mono text-xs sm:text-sm space-y-2 leading-relaxed text-slate-900 dark:text-slate-200"
+                    >
+                      <div>
+                        <span className="text-purple-700 dark:text-purple-400 font-bold">const</span>{' '}
+                        <span className="text-indigo-700 dark:text-indigo-300 font-bold">developer</span> = &#123;
+                      </div>
+                      <div className="pl-4">
+                        <span className="text-cyan-700 dark:text-cyan-400 font-bold">name:</span>{' '}
+                        <span className="text-emerald-700 dark:text-emerald-400 font-semibold">'{HERO_DATA.name}'</span>,
+                      </div>
+                      <div className="pl-4">
+                        <span className="text-cyan-700 dark:text-cyan-400 font-bold">role:</span>{' '}
+                        <span className="text-emerald-700 dark:text-emerald-400 font-semibold">'Full Stack Web Developer'</span>,
+                      </div>
+                      <div className="pl-4">
+                        <span className="text-cyan-700 dark:text-cyan-400 font-bold">coreTech:</span> [
+                      </div>
+                      <div className="pl-8 text-amber-700 dark:text-amber-300 font-semibold">
+                        'ReactJS', 'NextJS', 'TypeScript', 'Ruby-On-Rails', 'Laravel'
+                      </div>
+                      <div className="pl-4">],</div>
+                      <div className="pl-4">
+                        <span className="text-cyan-700 dark:text-cyan-400 font-bold">coffeeLevel:</span>{' '}
+                        <span className="text-rose-600 font-bold">Infinity</span>,
+                      </div>
+                      <div className="pl-4">
+                        <span className="text-cyan-700 dark:text-cyan-400 font-bold">passion:</span>{' '}
+                        <span className="text-emerald-700 dark:text-emerald-400 font-semibold">'Crafting digital perfection'</span>
+                      </div>
+                      <div>&#125;;</div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
                 {/* Quick Floating Badge Card */}
                 <motion.div
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  className="mt-6 p-4 rounded-2xl bg-indigo-100/90 dark:bg-indigo-950/80 border border-indigo-300 dark:border-indigo-800/60 flex items-center space-x-3"
+                  className="mt-5 p-3.5 rounded-2xl bg-indigo-100/90 dark:bg-indigo-950/80 border border-indigo-300 dark:border-indigo-800/60 flex items-center space-x-3"
                 >
-                  <div className="p-2.5 rounded-xl bg-indigo-600 text-white shadow-md">
+                  <div className="p-2.5 rounded-xl bg-indigo-600 text-white shadow-md shrink-0">
                     <Sparkles className="w-5 h-5" />
                   </div>
                   <div>
@@ -223,3 +400,4 @@ export const HeroSection: React.FC = () => {
     </section>
   );
 };
+

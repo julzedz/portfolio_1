@@ -14,7 +14,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-4 sm:p-6 pt-12 sm:pt-14 pb-8 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -26,11 +26,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
         {/* Modal Window */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 20 }}
+          exit={{ opacity: 0, scale: 0.95, y: 10 }}
           transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-          className="relative w-full max-w-3xl glass-card rounded-3xl overflow-hidden border border-slate-300 dark:border-slate-700 shadow-2xl z-10 my-8 bg-white/95 dark:bg-slate-900/95"
+          className="relative w-full max-w-3xl glass-card rounded-3xl overflow-hidden border border-slate-300 dark:border-slate-700 shadow-2xl z-10 my-auto max-h-[85vh] flex flex-col bg-white/95 dark:bg-slate-900/95"
         >
           {/* Close Button */}
           <button
@@ -42,7 +42,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </button>
 
           {/* Project Header Image banner */}
-          <div className="relative h-64 sm:h-80 overflow-hidden">
+          <div className="relative h-48 sm:h-60 shrink-0 overflow-hidden">
             <img
               src={project.image}
               alt={project.title}
@@ -50,19 +50,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
-            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
+            <div className="absolute bottom-5 left-6 right-6 text-white space-y-1">
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-indigo-600 text-white uppercase tracking-wider">
                 {project.category}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white pt-1">
+              <h2 className="text-xl sm:text-2xl font-heading font-bold text-white pt-1">
                 {project.title}
               </h2>
-              <p className="text-sm text-slate-200 font-medium">{project.subtitle}</p>
+              <p className="text-xs sm:text-sm text-slate-200 font-medium">{project.subtitle}</p>
             </div>
           </div>
 
           {/* Modal Body */}
-          <div className="p-6 sm:p-8 space-y-6">
+          <div className="p-6 sm:p-8 space-y-6 overflow-y-auto">
             {/* Overview */}
             <div>
               <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-400 mb-2">
