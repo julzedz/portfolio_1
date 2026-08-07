@@ -31,7 +31,7 @@ export const ExperienceSection: React.FC = () => {
         {/* Timeline List */}
         <div className="mt-16 relative">
           {/* Vertical central timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-transparent opacity-30" />
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-indigo-500 via-purple-500 to-transparent opacity-30" />
 
           <div className="space-y-12">
             {EXPERIENCES_DATA.map((exp, idx) => {
@@ -41,7 +41,7 @@ export const ExperienceSection: React.FC = () => {
                   key={exp.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
+                  viewport={{ once: true, amount: 0.1 }}
                   transition={{ duration: 0.6, delay: idx * 0.15 }}
                   className={`relative flex flex-col md:flex-row items-center ${
                     isEven ? 'md:flex-row-reverse' : ''

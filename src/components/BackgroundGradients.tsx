@@ -12,7 +12,7 @@ export const BackgroundGradients: React.FC = () => {
         className={`absolute inset-0 transition-colors duration-700 ${
           theme === 'dark'
             ? 'bg-slate-950 text-slate-100'
-            : 'bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/40 text-slate-800'
+            : 'bg-linear-to-br from-slate-50 via-indigo-50/30 to-purple-50/40 text-slate-800'
         }`}
       />
 
@@ -45,7 +45,7 @@ export const BackgroundGradients: React.FC = () => {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className={`absolute top-1/3 -right-24 w-[30rem] h-[30rem] rounded-full blur-3xl opacity-35 transition-colors duration-700 ${
+        className={`absolute top-1/3 -right-24 w-120 h-120 rounded-full blur-3xl opacity-35 transition-colors duration-700 ${
           theme === 'dark' ? 'bg-purple-600/30' : 'bg-purple-300/45'
         }`}
       />
@@ -62,14 +62,14 @@ export const BackgroundGradients: React.FC = () => {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className={`absolute bottom-10 left-1/3 w-96 h-96 rounded-full blur-3xl opacity-30 transition-colors duration-700 ${
+        className={`absolute top-2/3 left-1/3 w-96 h-96 rounded-full blur-3xl opacity-30 transition-colors duration-700 ${
           theme === 'dark' ? 'bg-cyan-600/25' : 'bg-sky-300/40'
         }`}
       />
 
       {/* Grid Pattern Overlay */}
       <div
-        className={`absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:24px_24px]`}
+        className={`absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none bg-[radial-gradient(#6366f1_1px,transparent_1px)] bg-size-[24px_24px]`}
       />
     </div>
   );

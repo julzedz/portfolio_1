@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
           
           {/* Brand & Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-md">
+            <div className="w-9 h-9 rounded-xl bg-linear-to-tr from-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-md">
               <Code2 className="w-5 h-5" />
             </div>
             <div>

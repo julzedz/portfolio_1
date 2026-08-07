@@ -14,29 +14,37 @@ export const AppContent: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('about');
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['about', 'skills', 'experience', 'projects', 'education', 'contact'];
-      const scrollPosition = window.scrollY + 200;
+    let ticking = false;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const sections = ['about', 'skills', 'experience', 'projects', 'education', 'contact'];
+          const scrollPosition = window.scrollY + 200;
+
+          for (const section of sections) {
+            const element = document.getElementById(section);
+            if (element) {
+              const top = element.offsetTop;
+              const height = element.offsetHeight;
+              if (scrollPosition >= top && scrollPosition < top + height) {
+                setActiveSection((prev) => (prev !== section ? section : prev));
+                break;
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className="min-h-screen text-slate-900 dark:text-slate-100 selection:bg-indigo-500 selection:text-white relative">
+    <div className="min-h-screen text-slate-900 dark:text-slate-100 selection:bg-indigo-500 selection:text-white relative overflow-x-hidden max-w-full">
       <BackgroundGradients />
       <Navbar activeSection={activeSection} />
       <main className="relative z-10">

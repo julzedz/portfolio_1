@@ -101,7 +101,7 @@ export const SkillsSection: React.FC = () => {
                 {selectedCategory === cat && (
                   <motion.div
                     layoutId="skillsCategoryTab"
-                    className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl -z-10"
+                    className="absolute inset-0 bg-linear-to-r from-indigo-600 to-purple-600 rounded-xl -z-10"
                     transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                   />
                 )}
@@ -132,7 +132,7 @@ export const SkillsSection: React.FC = () => {
                   <div>
                     <div className="flex items-center justify-between mb-3">
                       <div
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${skill.color} p-2.5 flex items-center justify-center text-white shadow-md`}
+                        className={`w-12 h-12 rounded-xl bg-linear-to-br ${skill.color} p-2.5 flex items-center justify-center text-white shadow-md`}
                       >
                         <IconComponent className="w-6 h-6" />
                       </div>
@@ -156,7 +156,7 @@ export const SkillsSection: React.FC = () => {
                         initial={{ width: 0 }}
                         animate={{ width: `${skill.level}%` }}
                         transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-                        className={`h-full bg-gradient-to-r ${skill.color}`}
+                        className={`h-full bg-linear-to-r ${skill.color}`}
                       />
                     </div>
                   </div>

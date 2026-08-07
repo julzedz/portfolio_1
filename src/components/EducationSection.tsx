@@ -35,14 +35,14 @@ export const EducationSection: React.FC = () => {
               key={edu.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
               className="glass-card glass-card-hover rounded-3xl p-6 sm:p-8 border border-slate-300 dark:border-slate-800 flex flex-col justify-between shadow-xl"
             >
               <div>
                 <div className="flex items-center justify-between gap-4 pb-4 border-b border-slate-300 dark:border-slate-800">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-700 p-3 flex items-center justify-center text-white shadow-md">
+                    <div className="w-12 h-12 rounded-2xl bg-linear-to-tr from-emerald-600 to-teal-700 p-3 flex items-center justify-center text-white shadow-md">
                       {idx === 0 ? (
                         <Award className="w-6 h-6" />
                       ) : (

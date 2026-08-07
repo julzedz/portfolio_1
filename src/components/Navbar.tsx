@@ -48,7 +48,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             <motion.div
               whileHover={{ rotate: 180, scale: 1.1 }}
               transition={{ duration: 0.5, ease: 'easeInOut' }}
-              className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/25"
+              className="w-10 h-10 rounded-xl bg-linear-to-tr from-indigo-600 via-purple-600 to-pink-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/25"
             >
               <Code2 className="w-5 h-5" />
             </motion.div>
@@ -119,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             {/* CTA button */}
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-bold rounded-xl text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/35 transition-all duration-200 active:scale-[0.98]"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-sm font-bold rounded-xl text-white bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/35 transition-all duration-200 active:scale-[0.98]"
             >
               Hire Me
             </a>
@@ -160,7 +160,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center px-4 py-3 text-base font-bold rounded-xl text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow-md text-center"
+                className="w-full inline-flex items-center justify-center px-4 py-3 text-base font-bold rounded-xl text-white bg-linear-to-r from-indigo-600 to-purple-600 shadow-md text-center"
               >
                 Hire Me
               </a>
