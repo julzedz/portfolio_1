@@ -44,7 +44,7 @@ export const AppContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-slate-900 dark:text-slate-100 selection:bg-indigo-500 selection:text-white relative overflow-x-hidden max-w-full">
+    <div className="min-h-screen text-slate-900 dark:text-slate-100 selection:bg-indigo-500 selection:text-white relative w-full">
       <BackgroundGradients />
       <Navbar activeSection={activeSection} />
       <main className="relative z-10">
