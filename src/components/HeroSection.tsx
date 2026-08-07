@@ -244,7 +244,7 @@ export const HeroSection: React.FC = () => {
                           autoPlay
                           muted={isMuted}
                           onEnded={handleVideoEnded}
-                          className="w-full aspect-video sm:aspect-[4/3] object-cover"
+                          className="w-full aspect-video sm:aspect-4/3 object-cover"
                         />
 
                         {/* Interactive Play/Pause & Sound Overlay */}

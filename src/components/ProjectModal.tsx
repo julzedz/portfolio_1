@@ -48,7 +48,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               alt={project.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
             <div className="absolute bottom-5 left-6 right-6 text-white space-y-1">
               <span className="px-3 py-1 rounded-full text-xs font-bold bg-indigo-600 text-white uppercase tracking-wider">
@@ -144,7 +144,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   href={project.demoUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-md shadow-indigo-500/20 transition-all"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-md shadow-indigo-500/20 transition-all"
                 >
                   <span>Live Preview</span>
                   <ExternalLink className="w-4 h-4" />

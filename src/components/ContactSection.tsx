@@ -54,7 +54,7 @@ const ContactForm: React.FC<FormProps> = ({ onReset }) => {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            placeholder="John Doe"
+            placeholder="Tim Obi"
             className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400"
           />
           <ValidationError prefix="Name" field="name" errors={state.errors} className="text-xs text-rose-600 font-bold mt-1 block" />
@@ -70,7 +70,7 @@ const ContactForm: React.FC<FormProps> = ({ onReset }) => {
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            placeholder="john@example.com"
+            placeholder="tim@email.com"
             className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-950 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all font-semibold placeholder:text-slate-500 dark:placeholder:text-slate-400"
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} className="text-xs text-rose-600 font-bold mt-1 block" />
